@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Notes App
 
-## Getting Started
+This project is a simple note-taking application with signup, signin, a dashboard to view, create, edit, and delete notes, and a search functionality.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*   **Signup/Signin:** Secure user authentication.
+*   **Dashboard:** Displays all created notes.
+*   **Create Note:** Allows users to create new notes with titles and content.
+*   **Edit Note:** Enables users to modify existing notes.
+*   **Delete Note:** Provides the ability to remove notes.
+*   **Search:** Search notes by title or tag.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*   [React, Node.js, Express, MongoDB, Zustand, Google's Gemini API]
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+1.  **Clone the repository:**
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    git clone https://github.com/prynsh/mason_frontend.git
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2.  **Navigate to the project directory:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ```bash
+    cd mason_frontend
+    ```
 
-## Deploy on Vercel
+3.  **Install dependencies:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    npm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4.  **Create an environment file:**
+
+    Create a `.env` file in the root directory of the project.
+
+5.  **Add your Gemini API key:**
+
+    Add the following line to your `.env` file, replacing `YOUR_GEMINI_API_KEY` with your actual Gemini API key:
+
+    ```
+    NEXT_PUBLIC_GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+    ```
+
+## Running the Application
+
+1.  **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+This will start the application, and it should be accessible at [http://localhost:3000](http://localhost:3000).
+
+## Usage
+
+1.  **Signup/Signin:** Navigate to the signup or signin page to create an account or log in.
+2.  **Dashboard:** After logging in, you will be redirected to the dashboard, where you can see all your notes.
+3.  **Create Note:** Click the "Create Note" button to create a new note.  Provide a title and the content for your note.
+4.  **Edit Note:** Click on a note to edit it. Make your changes and save.
+5.  **Delete Note:** Click the delete button associated with a note to remove it.
+6.  **Search:** Use the search bar to search for notes by title or tag.

@@ -22,13 +22,11 @@ const stripHTMLTags = (html: string) => {
 };
 
 export const ExpandedNote = ({ note, id, showAISummary, onToggleAISummary, ref }: ExpandedNoteProps) => {
-  const [aiSummary, setAiSummary] = useState(note.aiSummary);
+  const [aiSummary, setAiSummary] = useState(note.aiSummary || "");
 
   useEffect(() => {
-    if (aiSummary === undefined) {
-      setAiSummary(note.aiSummary);
-    }
-  }, [note.aiSummary]); 
+    setAiSummary(note.aiSummary || "");
+  }, [note.aiSummary]);
 
   return (
     <div className="fixed inset-0 grid place-items-center z-[100] p-4">
