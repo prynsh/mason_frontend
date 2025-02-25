@@ -130,25 +130,25 @@ export default function Dashboard() {
       </motion.ul>
 
       {totalPages > 1 && (
-        <div className="flex justify-center mt-6 fixed bottom-4 left-0 right-0">
-          <div className="flex space-x-2  p-2 rounded-lg shadow-lg">
-            <button
-              className="px-4 py-2 text-sm font-semibold rounded-md transition-all bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 disabled:opacity-50"
-              onClick={() => setCurrentPage(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Prev
-            </button>
-            <span className="px-4 py-2 text-sm font-semibold">{`Page ${currentPage} of ${totalPages}`}</span>
-            <button
-              className="px-4 py-2 text-sm font-semibold rounded-md transition-all bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 disabled:opacity-50"
-              onClick={() => setCurrentPage(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          </div>
+        <div className="flex justify-center mt-6 fixed bottom-4 left-0 right-0 ">
+        <div className="flex space-x-2 p-2 rounded-lg shadow-lg bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-purple-100">
+          <button
+            className="px-4 py-2 text-sm font-semibold rounded-md transition-all bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-200 hover:bg-purple-100 dark:hover:bg-purple-900/50 disabled:opacity-50 disabled:hover:bg-purple-50 dark:disabled:hover:bg-purple-900/30"
+            onClick={() => setCurrentPage(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Prev
+          </button>
+          <span className="px-4 py-2 text-sm font-semibold text-purple-900 dark:text-purple-100">{`Page ${currentPage} of ${totalPages}`}</span>
+          <button
+            className="px-4 py-2 text-sm font-semibold rounded-md transition-all bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-200 hover:bg-purple-100 dark:hover:bg-purple-900/50 disabled:opacity-50 disabled:hover:bg-purple-50 dark:disabled:hover:bg-purple-900/30"
+            onClick={() => setCurrentPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
         </div>
+      </div>
       )}
 
       {isModalOpen && selectedNoteId && (

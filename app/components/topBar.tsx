@@ -47,7 +47,7 @@ function Topbar() {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6 dark:stroke-white"
+                className="size-6  text-purple-600"
               >
                 <path
                   strokeLinecap="round"
@@ -59,7 +59,7 @@ function Topbar() {
             </Link>
             <div className="flex items-center space-x-4">
               <button
-                className="flex items-center space-x-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                className="flex items-center space-x-2 px-4 py-2  text-purple-600 dark:text-gray-300 hover:text-purple-900 dark:hover:text-white dark:hover:bg-gray-800 rounded-lg transition-colors"
                 onClick={handleLogout}
                 aria-label="Logout"
               >

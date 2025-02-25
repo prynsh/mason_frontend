@@ -41,7 +41,7 @@ export default function CreatePage() {
   }, [createNote, router, generateContent]);
 
   return (
-    <div className="container mx-auto p-6 max-w-3xl space-y-8">
+    <div className="container mx-auto p-6 max-w-3xl space-y-8 text-purple-900">
       <TitleInput 
         value={title} 
         onChange={setTitle} 
