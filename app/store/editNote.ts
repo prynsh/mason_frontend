@@ -27,7 +27,7 @@ export const editNote = create<NoteStore>((set) => ({
   fetchNote: async (noteId) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get(`http://3.108.64.68:8080/notes/${noteId}`, {
+      const response = await axios.get(`https://masonbackend-production.up.railway.app/notes/${noteId}`, {
         headers: { Authorization: token },
       });
 
@@ -52,7 +52,7 @@ export const editNote = create<NoteStore>((set) => ({
       const { title, content, tags } = editNote.getState();
   
       const response = await axios.put(
-        `http://3.108.64.68:8080/notes/${noteId}`, 
+        `https://masonbackend-production.up.railway.app/notes/${noteId}`, 
         { title, content, tags }, 
         { headers: { Authorization: token } }
       );

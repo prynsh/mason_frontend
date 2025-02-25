@@ -28,7 +28,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
     try {
       const { email, password } = get();
-      const res = await axios.post("http://3.108.64.68:8080/signin", { email, password });
+      const res = await axios.post("https://masonbackend-production.up.railway.app/signin", { email, password });
 
       if (res.status === 200) {
         const { token } = res.data;
@@ -50,7 +50,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
     try {
       const { email, password } = get();
-      const res = await axios.post("http://3.108.64.68:8080/signup", { email, password });
+      const res = await axios.post("https://masonbackend-production.up.railway.app/signup", { email, password });
 
       if (res.status === 200) {
         window.location.href = "/signin";

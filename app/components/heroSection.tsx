@@ -17,7 +17,7 @@ export default function HeroSection() {
           Write naturally. Let AI organize your thoughts. Get clear, concise summaries of your notes instantly.
         </p>
         <button
-          onClick={() => router.push("/signin")}
+          onClick={() => router.push("/signup")}
           className="inline-flex items-center px-6 py-3 text-lg font-medium rounded-lg shadow-lg text-white bg-purple-600 hover:bg-purple-700"
         >
           Create an Account

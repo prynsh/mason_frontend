@@ -20,7 +20,8 @@ const SignupFormContent = memo(() => {
     setError(null)
 
     try {
-      const res = await axios.post("http://3.108.64.68:8080/signup", { email, password })
+      const res = await axios.post("https://masonbackend-production.up.railway.app/signup", { email, password })
+      console.log(process.env.BASE_URL)
 
       if (res.status === 200) {
         router.push("/signin")

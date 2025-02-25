@@ -73,7 +73,7 @@ export const useNoteStore = create<NoteState>((set, get) => ({
       const aiSummary = await generateContent({ title, content });
 
       await axios.post(
-        "http://3.108.64.68:8080/notes/create",
+        "https://masonbackend-production.up.railway.app/notes/create",
         {
           title: title.trim(),
           content: content.trim(),

@@ -63,7 +63,7 @@ export const useNoteManagementStore = create<NoteManagementState>((set, get) => 
       const token = localStorage.getItem("token");
       if (!token) throw new Error("No token found");
 
-      const response = await axios.get("http://3.108.64.68:8080/notes/bulk", {
+      const response = await axios.get("https://masonbackend-production.up.railway.app/notes/bulk", {
         headers: { Authorization: token },
       });
 
@@ -92,7 +92,7 @@ export const useNoteManagementStore = create<NoteManagementState>((set, get) => 
   deleteNote: async (noteId: string) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://3.108.64.68:8080/notes/${noteId}`, {
+      await axios.delete(`https://masonbackend-production.up.railway.app/notes/${noteId}`, {
         headers: { Authorization: token },
       });
 
