@@ -29,7 +29,7 @@ export const useGenerate = (): GenerateResult => {
       setError(null);
       
       const model: GenerativeModel = genAI.getGenerativeModel({ 
-        model: "gemini-pro" 
+        model: "gemini-1.5-pro" 
       });
 
       const plainContent = content.replace(/<[^>]*>/g, '');
@@ -62,3 +62,5 @@ Content: ${plainContent}`;
     error,
   };
 };
+
+

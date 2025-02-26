@@ -25,26 +25,37 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
   login: async () => {
     set({ loading: true, error: null });
-
+  
     try {
       const { email, password } = get();
       const res = await axios.post("https://masonbackend-production.up.railway.app/signin", { email, password });
-
+  
       if (res.status === 200) {
         const { token } = res.data;
         localStorage.setItem("token", token);
         set({ token });
         window.location.href = "/dashboard";
-      } else {
-        set({ error: "Failed to log in. Please check your credentials." });
       }
-    } catch {
-      set({ error: "Something went wrong. Please try again later." });
+    }catch (error: unknown) { 
+      if (axios.isAxiosError(error)) { 
+        const status = error.response?.status;
+        const message = error.response?.data?.message || "An error occurred";
+  
+        if (status === 401) {
+          set({ error: "Invalid email. Please create an account to log in." });
+        } else if (status === 411) {
+          set({ error: "Invalid input. Please check your email and password." });
+        } else {
+          set({ error: message });
+        }
+      } else {
+        set({ error: "Something went wrong. Please try again later." });
+      }
     } finally {
       set({ loading: false });
     }
   },
-
+  
   signup: async () => {
     set({ loading: true, error: null });
 

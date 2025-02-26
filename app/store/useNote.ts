@@ -89,6 +89,7 @@ export const useNoteStore = create<NoteState>((set, get) => ({
 
       set({ success: "Note created successfully!", error: "", title: "", content: "", tags: "" });
 
+
       setTimeout(() => {
         router.push("/dashboard");
       }, 1000);
