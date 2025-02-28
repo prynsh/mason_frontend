@@ -108,7 +108,7 @@ export default function Dashboard() {
         )}
       </AnimatePresence>
 
-      <div className="flex justify-center w-full mb-4 space-x-10">
+      <div className="flex justify-center w-full mb-4 space-x-10 ">
         <Toolbar />
       </div>
 

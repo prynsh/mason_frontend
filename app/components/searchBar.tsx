@@ -1,14 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNoteManagementStore } from '../store/noteManagement';
 
 export const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const searchNotes = useNoteManagementStore(state => state.searchNotes);
 
+  useEffect(() => {
+    const delayDebounce = setTimeout(() => {
+      searchNotes(searchTerm);
+    }, 500); 
+
+    return () => clearTimeout(delayDebounce);
+  }, [searchTerm, searchNotes]);
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchTerm(value);
-    searchNotes(value);
+    setSearchTerm(e.target.value);
   };
 
   return (

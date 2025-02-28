@@ -7,7 +7,7 @@ const Toolbar = memo(() => {
     const router = useRouter();
     
     return (
-      <div className="flex justify-center w-full mb-4 space-x-10">
+      <div className="flex justify-center w-full mb-4 space-x-10 ">
         <SearchBar />
         <button 
           onClick={() => router.push("/create")} 
